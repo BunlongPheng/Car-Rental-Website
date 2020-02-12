@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carRental>
+ 
+ <car category="sedan">
+  	<id>01</id>
+    <availability>No</availability>
+    <brand>Toyota</brand>
+    <model>Camry</model>
+    <modelYear>2013</modelYear>
+    <image>Camery.jpg</image>
+    <mileage>10000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>5</seat>
+    <pricePerDay>120</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="sedan">
+  	<id>02</id>
+    <availability>Yes</availability>
+    <brand>BMW</brand>
+    <model>320i</model>
+    <modelYear>2015</modelYear>
+    <image>320i.jpg</image>
+    <mileage>12000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>5</seat>
+    <pricePerDay>150</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="wagon">
+  	<id>03</id>
+    <availability>Yes</availability>
+    <brand>Holden</brand>
+    <model>Captiva</model>
+    <modelYear>2010</modelYear>
+    <image>Captiva.jpg</image>
+    <mileage>20000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>7</seat>
+    <pricePerDay>200</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="wagon">
+  	<id>04</id>
+    <availability>Yes</availability>
+    <brand>Jeep</brand>
+    <model>Cherokee</model>
+    <modelYear>2015</modelYear>
+    <image>Cherokee.jpg</image>
+    <mileage>15000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>7</seat>
+    <pricePerDay>150</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="sedan">
+  	<id>05</id>
+    <availability>Yes</availability>
+    <brand>Honda</brand>
+    <model>Civic</model>
+    <modelYear>2018</modelYear>
+    <image>Civic.jpg</image>
+    <mileage>10000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>5</seat>
+    <pricePerDay>150</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="SUV">
+  	<id>06</id>
+    <availability>Yes</availability>
+    <brand>Mercedez</brand>
+    <model>GLC</model>
+    <modelYear>2018</modelYear>
+    <image>GLC.jpg</image>
+    <mileage>10000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>7</seat>
+    <pricePerDay>250</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="wagon">
+  	<id>07</id>
+    <availability>No</availability>
+    <brand>Volkswagen</brand>
+    <model>Golf</model>
+    <modelYear>2009</modelYear>
+    <image>Golf.jpg</image>
+    <mileage>40000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>7</seat>
+    <pricePerDay>100</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="SUV" >
+  	<id>08</id>
+    <availability>Yes</availability>
+    <brand>Suzuki</brand>
+    <model>Jimny</model>
+    <modelYear>2016</modelYear>
+    <image>Jimny.jpg</image>
+    <mileage>20000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>7</seat>
+    <pricePerDay>270</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="sedan" >
+  	<id>09</id>
+    <availability>No</availability>
+    <brand>Hyundai</brand>
+    <model>Sonata</model>
+    <modelYear>2012</modelYear>
+    <image>Sonata.jpg</image>
+    <mileage>13000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>5</seat>
+    <pricePerDay>110</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+  <car category="wagon">
+  	<id>10</id>
+    <availability>Yes</availability>
+    <brand>Nissan</brand>
+    <model>X-Trail</model>
+    <modelYear>2015</modelYear>
+    <image>X-trail.jpg</image>
+    <mileage>15000</mileage>
+    <fuelType>Petrol</fuelType>
+    <seat>5</seat>
+    <pricePerDay>170</pricePerDay>
+    <description>The car is in good condition</description>
+  </car>
+
+</carRental>

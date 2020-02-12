@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Car Rental Company</title>
+	<link rel="stylesheet" type="text/css" href="styles/home.css">
+	<link rel="stylesheet" type="text/css" href="styles/cart.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+
+</head>
+<script>
+
+  	var xhttp = new XMLHttpRequest();
+  	xhttp.onreadystatechange = function() {
+    	if (this.readyState == 4 && this.status == 200) {
+    		myFunction(this);
+    	}
+  		};
+  	
+  	xhttp.open("GET", "database/car.xml", true);
+  	xhttp.send();
+
+		
+  	//ajax to loop and display xml data 
+	function myFunction(xml) {
+  		var i;
+  		var j;
+  		var xmlDoc = xml.responseXML;
+  		var div="<div id='container'>";
+  		var carArray = new Array("id","availability","brand","model","modelYear","image","mileage","fuelType","seat","pricePerDay","description");
+  		var x = xmlDoc.getElementsByTagName("carRental")[0].children;
+  		
+  			for (i = 0; i <x.length; i++) {
+  				var car = x[i];
+  				var carLists = car.children
+  				var carDetail = new Array(11);
+
+  				for(j=0; j<carDetail.length; j++){
+  					if(carLists[j].nodeName === carArray[j]){
+  					carDetail[j] = carLists[j].childNodes[0].nodeValue;
+  					}
+  				
+  				}
+
+    		div += "<div class='carContainer'><div class='imgContainer'> <img src='images/" +
+    		carDetail[5] +
+    		"' class='img' /></div> " +
+    		"<table border='0' class='table'><tr><td colspan='2'><center><b>" +
+    		carDetail[2] +
+    		"-" +
+    		carDetail[3] +
+    		"-" +
+    		carDetail[4] +
+    		"</b></center></td></tr><tr><td><b>Mileage: </b></td><td>" +
+    		carDetail[6] +
+    		"</td></tr><tr><td><b>Fuel Type: </b></td><td>" +
+    		carDetail[7] +
+    		"</td></tr><tr><td><b>Seat: </b></td><td>" +
+    		carDetail[8] +
+    		"</td></tr><tr><td><b>Price Per Day: </b></td><td>$" +
+    		carDetail[9] +
+    		"</td></tr><tr><td><b>Description: </b></td><td>" +
+    		carDetail[10] + 		
+    		"</td></tr><tr><td><b>Availability: </b></td><td>" +
+    		carDetail[1] +   		
+    		"</td></tr></table><button type='button' value='Add to Cart' class='addToCart-button' onclick='availability("+ carDetail[0] + ")'>Add to Cart</button></div></div>";
+
+  		}
+  			document.getElementById("container").innerHTML = div;
+
+		}
+
+//check car if it is available
+	
+	var ajax = false;
+	if (window.XMLHttpRequest) {
+    ajax = new XMLHttpRequest();
+	} else if (window.ActiveXObject) {
+    try {
+        ajax = new ActiveXObject("Msxm12.XMLHTTP")
+    } catch (e1) {
+        try {
+            ajax = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e2) {
+
+        }
+    }
+}
+if (!ajax) {
+    alert("Other pages' functions are not avaiabile");
+}
+	
+
+   	function availability(id) {
+    if (ajax) {
+        ajax.open('get', 'pages/addToCart.php?id=' + id);
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                checkCar(this);
+            }
+        };
+        ajax.send();
+    }
+}
+// function to check the availability of the car
+function checkCar(xml) {
+    if (xml.responseText == "Yes") {
+        alert("The car has been added.");
+    } else {
+        alert("SORRY! This car is not available at the moment.");
+    }
+}
+
+</script>
+
+<body>
+
+<div class="header">
+	<div style="float:left; width: 15%; ">
+		
+	</div>
+
+	<div style="float: left; width: 70%; height: 100%; ">
+	<h1 class="headText" >Car Rental Company</h1>
+	</div>
+	<div style=" width: 14%; float:right; border-radius: 10px; margin-top: 20px">
+	<input class="button" type="button" name="carReservation" onclick="window.location.href='pages/cart/cart.php'" value="Car Reservation" >
+	</div>
+</div>
+
+<div id="container">
+
+</div>
+
+<div class="footer">
+	
+<p class="footerText"> Copyrights Bunlong Pheng 13137233 @UTS_2019 </p>
+</div>
+
+
+
+
+
+
+</body>
+</html>
